@@ -1,0 +1,1094 @@
+<!DOCTYPE html>
+<html lang="jp" dir="ltr">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta name="description" content=">動画を駆使した、高品質なWebサイト制作！忘れられない×高品質を届けます。">
+    <meta name="keywords" content="ホームページ制作,高品質,動画,HTML,CSS,JavaScript,デザイン,レイアウト,SEO">
+    <link rel="stylesheet" href="reset.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/png" href="images/fb.png">
+    <link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Lato:400,700|Noto+Sans+JP:400,700" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-2.2.4.js" integrity="sha256-iT6Q9iMJYuQiMWNd9lDyBUStIq/8PuOW33aOqmvFpqI=" crossorigin="anonymous"></script>
+    <script>
+        $(function() {
+            const hum = $('#hamburger, .close')
+            const nav = $('.sp-nav')
+            hum.on('click', function() {
+                nav.toggleClass('toggle');
+            });
+        });
+    </script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script>
+        $(function() {
+            $('#openModal,#openModal2').click(function() {
+                $('#modalArea').fadeIn();
+            });
+            $('#closeModal , #modalBg,#cansel').click(function() {
+                $('#modalArea').fadeOut();
+            });
+        });
+
+        $(function() {
+            var h = $(window).height();
+            $('#loading__wrapper').css('display', 'none');
+            $('#is-loading ,#loading').height(h).css('display', 'block');
+        });
+
+        $(window).load(function() {
+            $('#is-loading').delay(900).fadeOut(800);
+            $('#loading').delay(600).fadeOut(300);
+            $('#loading__wrapper').css('display', 'block');
+        });
+
+
+        $(function() {
+            setTimeout('stopload()', 10000);
+        });
+
+        function stopload() {
+            $('#loading__wrapper').css('display', 'block');
+            $('#is-loading').delay(900).fadeOut(800);
+            $('#loading').delay(600).fadeOut(300);
+        }
+    </script>
+    <script>
+        $(function() {
+            $('a[href^=#]').click(function() {
+                var speed = 1000; // ミリ秒
+                var href = $(this).attr("href");
+                var target = $(href == "#" || href == "" ? 'html' : href);
+                var position = target.offset().top;
+                $('body,html').animate({
+                    scrollTop: position
+                }, speed, 'swing');
+                return false;
+            });
+        });
+        jQuery(function() {
+            jQuery(window).scroll(function() {
+                jQuery('.fadein').each(function() {
+                    var elemPos = jQuery(this).offset().top;
+                    var scroll = jQuery(window).scrollTop();
+                    var windowHeight = jQuery(window).height();
+                    if (scroll > elemPos - windowHeight + 100) {
+                        jQuery(this).addClass('scrollin');
+                    }
+                });
+            });
+        });
+        jQuery(function() {
+            jQuery(window).scroll(function() {
+                jQuery('.fadein02').each(function() {
+                    var elemPos = jQuery(this).offset().top;
+                    var scroll = jQuery(window).scrollTop();
+                    var windowHeight = jQuery(window).height();
+                    if (scroll > elemPos - windowHeight + 300) {
+                        jQuery(this).addClass('scrollin02');
+                    }
+                });
+            });
+        });
+
+        $(function() {
+            $(window).on("load", function(pager) {
+                var eventElemArray = [];
+                var _count = 0;
+                var _countFix = 0;
+                $(window).on('load scroll resize', function() {
+                    eventElemArray = [];
+                    _count = 0;
+                    $('[data-nav]').each(function(i, pager) {
+                        eventElemArray.push($(pager).offset().top);
+                    });
+                    for (var _i = 0; _i < eventElemArray.length; _i++) {
+                        if ($(window).scrollTop() + ($(window).height() * 0.5) > eventElemArray[_i]) {
+                            _count++;
+                        }
+                    }
+                    if (_count !== _countFix) {
+                        _countFix = _count;
+                        $('.nav__dot li').removeClass('current');
+                        $('.nav__dot li').eq(_count - 1).addClass('current');
+                    }
+                });
+
+                $('.nav__dot li').on('click', function() {
+                    var speed = 700;
+                    var href = $(this).attr('data-nav-href');
+                    var offset = $(this).attr('data-nav-offset') | 0;
+                    var target = $(href == '' ? 'html' : href);
+                    var position = target.offset().top + offset
+                    $('body,html').animate({
+                        scrollTop: position
+                    }, speed);
+                    return false;
+                });
+            });
+        });
+    </script>
+    <title>Wevies｜SEO MEO 対策</title>
+</head>
+
+<body id="section01" data-nav="data-nav">
+
+    <!-- ################################
+    #
+    #＿＿ヘッダー
+    #
+    ##################################-->
+    <!-- ヘッダー＿ナビゲーションメニュー -->
+
+    <div id="nav-drawer" class="fwfw">
+        <a id="openModal2">
+            <img src="images/icon/icon_fwfw.svg" alt="">
+        </a>
+    </div>
+
+    <!-- ################################
+    #
+    #＿＿ビデオコンテンツ
+    #
+    ##################################-->
+    <!-- メインビデオ＿コンテンツ -->
+    <div class="clum01 bg">
+    </div>
+    <!-- ################################
+      #
+      #＿＿メイン
+      #
+      ##################################-->
+    <main ontouchstart="">
+
+
+        <ul class="nav__dot">
+            <li class="current" data-nav-href="#section01"></li>
+            <li data-nav-href="#section02"></li>
+            <li data-nav-href="#section03"></li>
+            <li data-nav-href="#section04"></li>
+            <li data-nav-href="#section05"></li>
+            <li data-nav-href="#section06"></li>
+            <li data-nav-href="#section07"></li>
+        </ul>
+
+        <div class="main">
+            <!-- 
+  ###################
+  
+  ラップ開始 1
+  
+  ###################### -->
+            <section class="blueG_bg h_400">
+
+                <!-- セクション 診断する -->
+                <div class="flexStart-C colum1_h20 blue_bg">
+                    <div class="colum3 bg01">
+                    </div>
+                    <div class="colum3">
+                        <div class="mail">
+                            <a class="btn btn-flat2 hover-white2 lp9-mail3" id="openModal2">
+                                <span>まずは診断してみる</span>
+                                <i class="fas fa-angle-right fa-position-right"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 大枠セクション１ タイトル -->
+                <h2 class="ttl m50_t m5_l" id="section02" data-nav="data-nav">
+                    まずは
+                    <span style="font-size:6vw;">
+        グラフ</span> をご覧ください。
+                </h2>
+                <br>
+
+                <!-- 
+          #######################
+
+          ラップ開始 1　インナー 1
+
+          ####################### -->
+                <div class="w_70 bd03 graph01" id="">
+                    <div class="flexStart-B">
+                        <div class="colum2 x5y5 g_ft">
+
+                            <!-- 小見出し2カラム -->
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>AAE</th>
+                                        <th>飲食店</th>
+                                    </tr>
+                                </thead>
+                            </table>
+                            <br>
+
+                            <h3 class="f_white">自社評価指標 AAE の 診断結果</h3>
+
+                            <h1 class="f_red">
+                                訴求力
+                                <span class="f_white">
+                が少ない
+              </span>
+                            </h1>
+                            <br>
+
+                            <h4 class="f_white g_ft2">
+                                ▶ 課題とお悩み
+
+                            </h4>
+                            <P class="f_white g_ft2">
+                                いいエリアに出店したものの訴求力が不足しており、 お客様層が極端に狭いのがわかった。
+                            </P>
+                        </div>
+                        <div class="colum2 data01">
+                        </div>
+                    </div>
+
+                    <!-- flex＿インナー②スタート -->
+                    <div class="flexStart-B gray_bg w_in top10">
+                        <div class="colum2 x5y5 g_ft">
+
+
+                            <h4 class="ico">
+                                AAE 診断後 施策考察</h4>
+
+                            <br>
+                            <h4 class="f_black g_ft2">
+                                【AAE診断で見えてきたもの】
+
+                            </h4>
+                            <P class="f_black g_ft2">
+                                ネットでの広告展開はしてなかった。<br> 幅広い顧客層を意識していたのに偏りがあった。
+                                <br> エリアを練って出店したので良いスコアだった。
+                                <br> 周辺のお店との差別化や、価格帯は適切だった。
+                                <br>
+                            </P>
+                        </div>
+
+                        <div class="colum2 g_ft top5">
+                            <h4 class="ico_none">
+                                <br></h4>
+
+                            <br>
+                            <h4 class="f_black g_ft2">
+                                【お客様の視察考察】
+
+                            </h4>
+                            <P class="f_black g_ft2">
+                                『ネットの展開をしていく（大手食レポサイトに掲載）』<br> 『Webサイト展開をする、それに広告をかけたりしたい』
+                                <br> 『お客様層を吟味し商品メニューや見せ方を工夫する』
+                                <br> 『エリアの利点を生かし、差別化できているものを伸ばす』
+                                <br> 『施策した後に、またAAE診断で結果を見てみたい』
+                                <br> ＿＿＿etc...
+                            </P>
+                        </div>
+                    </div>
+                </div>
+                <!-- ラップ開始 1　インナー 1 END -->
+
+
+                <!-- 
+          #######################
+
+          ラップ開始 1　インナー 2
+          
+          ####################### -->
+                <div class="w_70 bd03 m50_t graph02" id="">
+                    <div class="flexStart-B">
+                        <div class="colum2 x5y5 g_ft">
+
+                            <!-- 小見出し2カラム -->
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>AAE</th>
+                                        <th>美容室</th>
+                                    </tr>
+                                </thead>
+                            </table>
+
+                            <br>
+                            <h1 class="f_red">
+                                地域性
+                                <span class="f_white">
+             が少ない
+           </span>
+                            </h1>
+                            <h3 class="f_white">
+                                Googleマップに上位表示されてなかった
+                            </h3>
+                            <br>
+                            <h4 class="f_white g_ft2">
+                                ▶ 課題とお悩み
+                            </h4>
+                            <P class="f_white g_ft2">
+                                近くに大学などがあり、いいエリアに出店したものの、予約数は 伸びが悪く、大手サロンサイトのアクセスも増えない状況。
+                            </P>
+                        </div>
+                        <div class="colum2 data02">
+                        </div>
+                    </div>
+
+                    <!-- flex＿インナー②スタート -->
+                    <div class="flexStart-B gray_bg w_in top10">
+                        <div class="colum2 x5y5 g_ft">
+
+
+                            <h4 class="ico">
+                                AAE 診断後 施策考察</h4>
+
+                            <br>
+                            <h4 class="f_black g_ft2">
+                                【AAE診断で見えてきたもの】
+
+                            </h4>
+                            <P class="f_black g_ft2">
+                                地域性のスコアが悪いことで観光性を生かせてなかった。<br> 近くに競合がいたことを診断することで具体的に知れた。
+                                <br> Webサイトを取り合えず作っていたが役立ててなかった。
+                                <br> 狙ってるターゲットに絞れていたが差別化は出来そう。
+                                <br>
+                            </P>
+                        </div>
+
+                        <div class="colum2 g_ft top5">
+                            <h4 class="ico_none">
+                                <br></h4>
+
+                            <br>
+                            <h4 class="f_black g_ft2">
+                                【お客様の視察考察】
+
+                            </h4>
+                            <P class="f_black g_ft2">
+                                『観光性を生かし、大手サロンサイトなどの掲載費も増やす』<br> 『地域性が低かったので、SEO対策なども視野に入れる』
+                                <br> 『差別化を図るため、ブランディングも施行していく』
+                                <br> 『Webサイトに力を入れてなかったので力を入れたい』
+                                <br> 『自社広告なども全く欠けてなかったため視野に入れる』
+                                <br> ＿＿＿etc...
+                            </P>
+                        </div>
+                    </div>
+                </div>
+                <!-- ラップ開始 1　インナー 2 END -->
+
+                <!-- ラップ開始　インナー１と２　スマホ -->
+
+                <section id="graph_sp">
+                    <div class="u_inner2 m50_b">
+                        <details class="m20">
+                            <summary class="f_fm01 ">飲食店 訴求力が少ない事例</summary>
+                            <div class="table_sp">
+                                <div class="details-content">
+                                    <table class="m_auto">
+                                        <thead>
+                                            <tr>
+                                                <th></th>
+                                                <th><em>自社評価指標 AAE</em></th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <th>課題とお悩み</th>
+                                                <td class="g_ft2">
+                                                    <li>いいエリアに出店したものの訴求力が不足しており、お客様層が極端に狭いのがわかった。</li>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <th>診断結果</th>
+                                                <td class="g_ft2">
+                                                    <em>"訴求力"が少ない</em>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <th>診断結果グラフ</th>
+                                                <td><img src="images/data/data01.svg" alt="" width="300px"></td>
+                                            </tr>
+                                            <tr>
+                                                <th>診断後の感想</th>
+                                                <td class="g_ft2">
+                                                    <li>①ネットでの広告展開はしてなかった</li>
+                                                    <li>②幅広い顧客層を意識していたのに偏りがあった</li>
+                                                    <li>③エリアを練って出店したので良いスコアだった</li>
+                                                    <li>④周辺のお店との差別化や、価格帯は適切だった</li>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <th>診断後の考察</th>
+                                                <td class="g_ft2">
+                                                    <li>①ネット展開をしていく(大手食レポサイトに掲載)</li>
+                                                    <li>②Webサイト展開をする、それに広告をかけたり</li>
+                                                    <li>③お客様層を吟味し商品メニューや見せ方を工夫</li>
+                                                    <li>④エリア利点を生かし、差別化できるものを伸ばす</li>
+                                                    <li>⑤施策した後に、またAAE診断で結果を見てみたい</li>
+                                                    <li>...etc</li>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+
+                            </div>
+                        </details>
+
+                        <details class="m20">
+                            <summary class="f_fm01">美容室 地域性が少ない事例</summary>
+                            <div class="table_sp">
+                                <div class="details-content">
+                                    <table class="m_auto">
+                                        <thead>
+                                            <tr>
+                                                <th></th>
+                                                <th><em>自社評価指標 AAE</em></th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <th>課題とお悩み</th>
+                                                <td class="g_ft2">
+                                                    <li>近くに大学などがあり、いいエリアに出店したものの、予約数は伸びが悪く大手サロンサイトのアクセスも増えない状況。</li>
+
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <th>診断結果</th>
+                                                <td class="g_ft2">
+                                                    <em>"地域性"が少ない<br>
+                            Googleマップに上位表示されてなかった</em>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <th>診断結果グラフ</th>
+                                                <td><img src="images/data/data02.svg" alt="" width="300px"></td>
+                                            </tr>
+                                            <tr>
+                                                <th>診断後の感想</th>
+                                                <td class="g_ft2">
+                                                    <li>①地域性スコアが悪いことで観光性を生かせて無い</li>
+                                                    <li>②近くに競合がいたことを診断することで知れた</li>
+                                                    <li>③Webサイトを作っていたが役立てて無い</li>
+                                                    <li>④狙ってるお客様層に対して差別化はまだ出来る</li>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <th>診断後の考察</th>
+                                                <td class="g_ft2">
+                                                    <li>①観光性を生かし、サロンサイト掲載費も増やす</li>
+                                                    <li>②地域性が低かったので、SEO対策も視野に入れる</li>
+                                                    <li>③差別化を図るため、ブランディングも施工する</li>
+                                                    <li>④Webサイトに力を入れてなかったので力を入れる</li>
+                                                    <li>⑤自社広告も全く欠けてなかったため視野に入れる</li>
+                                                    <li>...etc</li>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+
+                        </details>
+
+                </section>
+
+
+                <!--  -->
+
+                <!-- 
+ #######################
+
+  大見出し 1
+         
+ ####################### -->
+                <div class="title01 f_white2">
+                    <dl>
+                        <dt>
+          <h3 class="bd02">
+            ネット広告・SNS・チラシなど
+          </h3>数ある広告の中でどれを選択すればいいのか？<br><br>
+          その悩みを解決するのが
+          <h1 class="f_gold">
+            自社評価指数 AAE です。
+          </h1>
+        </dt>
+                        <dd class="g_ft">
+                            弊社では6項目を基本とする診断から、<br> 御社の集客力の詳細を文字とグラフで 提示します。</dd>
+                    </dl>
+                </div>
+
+                <!-- 大見出し 1 END -->
+
+                <!-- 
+  #######################
+
+   コンテンナ AAE紹介
+         
+   ####################### -->
+
+                <ul class="list2 u_clearfix f_fm01">
+                    <li>
+                        <b>1つ目の文字 A<em>地域</em></b>
+                        <p class="a">地域（Area）<br> 地域需要と競合の相関を数値化
+                        </p>
+                        <p class="b"><i><small>AAEグラフ項目 </small></i> 1. 地域性<br> 2. 観光性</p>
+                        <p class="c"><em>地域別の集客</em>方法が見える</p>
+                    </li>
+                    <li>
+                        <b>2つ目の文字 A<em>集客</em></b>
+                        <p class="a">集客（Attracting customers）<br> 見えなかった集客力を数値化
+                        </p>
+                        <p class="b"><i><small>AAEグラフ項目</small></i> 3. 訴求力<br> 4. 競合性</p>
+                        <p class="c"><em>経営指針</em>が見えてくる</p>
+                    </li>
+                    <li>
+                        <b>3つ目の文字 E<em>評価指数</em></b>
+                        <p class="a">評価指数（Evaluation criteria）<br> 弊社が培ったノウハウ数値化
+                        </p>
+                        <p class="b"><i><small>ここまで詳細</small></i> 5. 顧客層<br> 6. 価格帯
+                        </p>
+                        <p class="c"><em>自社ポジション</em>が見えてくる</p>
+                    </li>
+                </ul>
+            </section>
+
+            <!-- ラップEND -- ###################### -->
+
+
+
+            <!-- 
+  #######################
+
+  お問い合わせ 定期コンテナ
+         
+  ####################### -->
+
+            <aside class="c_contact" style="background-image:url(images/icatch/contact.jpg)">
+                <div class="u_inner">
+                    <p>AAE診断は、<em>完全無料</em> です。
+                        <br class="u_visible_pc">
+                        <br class="u_visible_sp">まずは、お気軽に診断してみてください。</p>
+
+                    <div class="tel">
+                        <a class="u_tel splp9-call2" href="tel:03-4405-5679">03-4405-5679</a>
+                        <small class="g_ft">受付時間 10：00~19：00（ 土日祝を除く ）</small></div>
+                    <div class="mail">
+                        <a class="btn btn-flat hover-white lp9-mail3" id="openModal2">
+                            <span>まずは診断してみる</span>
+                            <i class="fas fa-angle-right fa-position-right">
+            </i>
+                        </a>
+                    </div>
+                </div>
+            </aside>
+            <!-- お問い合わせ　END -- ###################### -->
+
+            <!-- 
+  ###################
+  
+  ラップ開始 1
+  
+  ###################### -->
+
+            <section class="gray_bg  m15_tb" id="section03" data-nav="data-nav">
+                <div class="u_inner ">
+                    <h1 class="ttl2">
+                        そもそも"集客方法" と "AAE診断"<br> どういう関連性があるの？
+                    </h1>
+                    <p class="ttl2_in g_ft2">
+                        <br>
+                        <em>
+                              " どう集客すればいいのか、わからない " 
+                            </em>その悩み、一点にフォーカスした診断です。<br> 集客方法は多種多様 『施策したものの効果が現れない…という事は、ありませんか？』弊社はまず<br> 今あなたがいる
+                        <em>" 集客力の基準値 " </em> を提示、そこからの <em>"集客施策をアシスト"</em>します。
+                    </p>
+
+                    <div class="table2">
+                        <table class="m_auto">
+                            <thead>
+                                <tr>
+                                    <th></th>
+                                    <th><em>AAE診断 有り</em></th>
+                                    <th>AAE診断 無し</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <th>集客考察</th>
+                                    <td class="g_ft2">
+                                        <em>"訴求力"がほとんどなかった<br>
+                                    広告の前にHPを改善する！</em>
+                                    </td>
+                                    <td class="g_ft2">
+                                        <span>ネットの広告費を月15万以上打てば、集客できるよね！</span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th>施策後の反響</th>
+                                    <td><img src="images/data/chart01.svg" alt="" width="300px"></td>
+                                    <td><img src="images/data/chart02.svg" alt="" width="300px"></td>
+                                </tr>
+                                <tr>
+                                    <th>集客施策</th>
+                                    <td class="g_ft2">施策候補<strong class="m_ft"> 5案 </strong>以上</td>
+                                    <td class="g_ft2">施策候補<strong class="m_ft"> 2案 </strong>未満</td>
+                                </tr>
+                                <tr>
+                                    <th>経営指針</th>
+                                    <td class="g_ft2">
+                                        <em>明確に "なっている" </em>
+                                    </td>
+                                    <td class="g_ft2">
+                                        明確に "なっているつもり"
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+            </section>
+            <!-- ラップ開始 2　END -- ###################### -->
+
+            <!-- モバイルテーブルコンテンツ  -->
+            <section id="table_sp">
+                <div class="u_inner2 m50_b">
+
+                    <details class="m20">
+                        <summary class="f_fm01 ">AAE診断 有り</summary>
+                        <div class="details-content">
+                            <table class="m_auto">
+                                <thead>
+                                    <tr>
+                                        <th></th>
+                                        <th><em>AAE診断　有り</em></th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <th>集客考察</th>
+                                        <td class="g_ft2">
+                                            <em>"訴求力"がほとんどなかった<br>
+                            広告の前にHPを改善する！</em>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th>施策後の反響</th>
+                                        <td><img src="images/data/chart01.svg" alt="" width="300px"></td>
+                                    </tr>
+                                    <tr>
+                                        <th>集客施策</th>
+                                        <td class="g_ft2">施策候補<strong class="m_ft"> 5案 </strong>以上</td>
+                                    </tr>
+                                    <tr>
+                                        <th>経営指針</th>
+                                        <td class="g_ft2">
+                                            <em>明確に "なっている" </em>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </details>
+
+                    <details class="m20">
+                        <summary class="f_fm01">AAE診断 無し</summary>
+                        <div class="details-content">
+                            <table class="m_auto">
+                                <thead>
+                                    <tr>
+                                        <th></th>
+                                        <th><em>AAE診断　無し</em></th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <th>集客考察</th>
+                                        <td class="g_ft3">
+                                            <em>ネットの広告費を月15万以上打てば、集客できるよね！</em>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th>施策後の反響</th>
+                                        <td><img src="images/data/chart02.svg" alt="" width="300px"></td>
+                                    </tr>
+                                    <tr>
+                                        <th>集客施策</th>
+                                        <td class="g_ft2">施策候補<strong class="m_ft"> 2案 </strong>未満</td>
+                                    </tr>
+                                    <tr>
+                                        <th>経営指針</th>
+                                        <td class="g_ft3">
+                                            <em>明確に "なっているつもり" </em>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </details>
+
+
+
+
+                </div>
+            </section>
+            <!-- 
+  ###################
+  
+  ラップ開始 3
+  
+  ###################### -->
+            <section class="blueG_bg h_120" id="section04" data-nav="data-nav">
+
+                <div class="u_inner">
+                    <h2 class="ttl3 b g_ft">
+                        豊富な診断内容のご紹介<br>
+                        <em>Diagnosis information<em>
+      </h2>
+      <p class="lead g_ft2">
+        弊社AAE診断は6項目を基本とし、下記15の詳細項目も加味したうえで<br>
+        あなたの現在の集客力を徹底的に、ご診断いたします。
+      </p>
+      <div class="w_80 bg_conte">  
+</div>
+
+        </section>
+
+<!-- 
+  ###################
+  
+  ラップ開始 4
+  
+  ###################### -->        
+        <section class="h_200">
+
+          <div class="u_inner">
+            <h2 class="ttl4 b g_ft">
+              お客様のお喜びの声<br>
+              <em>Diagnosis information</em>
+                    </h2>
+                    <p class="lead2 g_ft2">
+                        集客に特化した診断を実施することで、影響力の高い分野ということもあり<br> 多くのお客様にレスポンスが早い、 お喜びの声を頂いております。
+                    </p>
+                    <div class="w_80 bg_conte2">
+                    </div>
+
+
+                    <!--  #######################
+
+            大見出し 2
+                   
+           ####################### -->
+                    <div class="title02 g_ft m50_b">
+                        <dl>
+                            <dt>
+                    <h2 class="f_gold2">
+                      完全無料
+                      <span>
+                        の今が
+                      </span>
+                      チャンスです！
+                      <span>
+                        追加料金一切無し
+                      </span>
+                    </h2>
+                    <h2 class="f_gold2">
+                      <span>
+                        あなたの
+                      </span>"集客力の基準値"
+                      <span>
+                        と
+                      </span>
+                      "集客方法"
+                      <span>
+                        が見えてきます！
+                      </span>
+                    </h2>
+                  </dt>
+                            <img src="img/img_pc01.png" alt="">
+                    </div>
+
+                    <!-- コンテンツ＿Type.1　縦2カラム　画像＞見出し -->
+                    <div class="w_max flexStart-C">
+
+                        <div class="w_30 flexStart-A-C set">
+                            <div class="img-content01">
+                                <p class="img_Up set-in poSec01-img f_green">
+                                    01</p>
+                            </div>
+                            <div class="w_20_fc">
+                                <h4 class="g_ft">
+                                    診断開始
+                                </h4>
+                                <br>
+                                <p class="g_ft2 f_black m50_b m1_l">
+                                    お問い合わせ後、3営業日前後お待ちください。診断開始の面倒な手続きは一切無しです。 弊社の高品質な診断項目で、あなたの現在の集客力提示を行います。
+                                </p>
+
+                            </div>
+                        </div>
+
+                        <div class="w_30 flexStart-A-C set">
+                            <div class="img-content02">
+                                <p class="img_Up set-in poSec01-img f_green">
+                                    02</p>
+                            </div>
+                            <div class="w_20_fc">
+                                <h4 class="g_ft">
+                                    レポートをお送り
+                                </h4>
+                                <br>
+                                <p class="g_ft2 f_black m50_b m1_l">
+                                    診断結果は見える形で、形式はPDF・紙面・xlsxなどご要望に合わせ完全無料でお渡ししております。 "それ一つ"で、集客は完全に把握できます。必ずお役立ちできることをお約束します。
+                                </p>
+
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 大見出し 1 END -->
+            </section>
+
+            <!-- 
+  #######################
+
+  お問い合わせ 定期コンテナ
+         
+  ####################### -->
+
+            <aside class="c_contact" style="background-image:url(images/icatch/contact.jpg)">
+                <div class="u_inner">
+                    <p>AAE診断は、<em>完全無料</em> です。
+                        <br class="u_visible_pc">
+                        <br class="u_visible_sp">まずは、お気軽に診断してみてください。</p>
+
+                    <div class="tel">
+                        <a class="u_tel splp9-call2" href="tel:03-4405-5679">03-4405-5679</a>
+                        <small class="g_ft">受付時間 10：00~19：00（ 土日祝を除く ）</small></div>
+                    <div class="mail">
+                        <a class="btn btn-flat hover-white lp9-mail3" id="openModal2">
+                            <span>まずは診断してみる</span>
+                            <i class="fas fa-angle-right fa-position-right">
+        </i>
+                        </a>
+                    </div>
+                </div>
+            </aside>
+            <!-- お問い合わせ　END -- ###################### -->
+
+            <section id="flow" class="top_flow">
+                <div class="u_inner2" id="section05" data-nav="data-nav">
+                    <h2 class="ttl6 g_ft">弊社の真摯な思い<br>
+                        <em>Cost performance</em></h2>
+                    <ul class="u_clearfix">
+                        <li>
+                            <i>01</i>
+                            <img src="images/icon/ico_fig16.svg" alt="">
+                            <dl>
+                                <dt><span>この時代を生き抜く<br>
+            集客をアシストしたい</span></dt>
+                                <dd class="g_ft">
+                                    激動の時代だからこそ、手堅い集客方法を見出したい。その思い一点だけ、皆様へこの診断をお届けしたい。</dd>
+                            </dl>
+                        </li>
+                        <li>
+                            <i>02</i>
+                            <img src="images/icon/ico_fig17.svg" alt="">
+                            <dl>
+                                <dt><span>培ったこのノウハウ<br>
+              役立たないはずは無い</span></span></dt>
+                                <dd class="g_ft">
+                                    人材派遣、人材紹介の培ったノウハウを活かします。SES事業部のマーケッターが、あらゆるネットの海を開拓いたします。</dd>
+                            </dl>
+                        </li>
+                        <li>
+                            <i>03</i>
+                            <img src="images/icon/ico_fig18.svg" alt="">
+                            <dl>
+                                <dt><span>まずは試してほしい<br>
+              だから完全無料にしました</span></span></dt>
+                                <dd class="g_ft">
+                                    自信があるからこそ完全無料。そして試さないとわからないことだからこそ、一切費用は掛からない事を重視しました。</dd>
+                            </dl>
+                        </li>
+                    </ul>
+                </div>
+            </section>
+
+
+
+            <section id="price" class="top_price g_ft">
+                <div class="u_inner" id="section06" data-nav="data-nav">
+                    <h2 class="ttl5">
+                        簡単3ステップで診断をお届けします<br>
+                        <em class="g_ft">Simple Three Step</em>
+                    </h2>
+                    <p class="g_ft">
+                        Ⅰ 問い合わせ完了
+                        <em>
+            安心安全・完全無料で対応いたします</em>
+                </div>
+
+                <div class="u_inner">
+                    <p class="g_ft">
+                        Ⅱ 診断結果 待ち
+                        <em>
+            ３営業日前後で診断完了します</em>
+                </div>
+
+
+                <div class="u_inner">
+                    <p class="g_ft">
+                        Ⅲ 診断結果お届け
+                        <em>
+            経営戦略はもう…あなたの直ぐ傍に</em>
+                </div>
+
+            </section>
+
+
+            <section id="flow" class="top_flow2">
+                <div class="u_inner2">
+                    <h2 class="ttl6 g_ft">よくある質問<br>
+                        <em>FAQ</em></h2>
+                    <details class="m20" id="section07" data-nav="data-nav">
+                        <summary class="f_fm01">後日請求はこないですか？</summary>
+                        <div class="details-content">
+                            <p>ご安心してください。完全無料で追加費用一切なしです。</p>
+                        </div>
+                    </details>
+
+
+                    <details class="m20">
+                        <summary class="f_fm01">自社以外の診断も出来ますか？</summary>
+                        <div class="details-content">
+                            <p>基本一社に付き、一回までとしております。</p>
+                        </div>
+                    </details>
+
+
+                    <details class="m20">
+                        <summary class="f_fm01">診断レポートはいつ頃届きますか？</summary>
+                        <div class="details-content">
+                            <p>お問い合わせ後、3営業日前後お待ちください。</p>
+                        </div>
+                    </details>
+
+                </div>
+            </section>
+
+
+            <section id="company" class="top_com">
+                <div class="u_inner">
+                    <h2 class="ttl5 g_ft">運営会社情報<br>
+                        <em>COMPANY</em>
+                    </h2>
+                    <table class="g_ft2">
+                        <tr>
+                            <th>会社名</th>
+                            <td>株式会社 リグロス</td>
+                        </tr>
+                        <tr>
+                            <th>電話番号</th>
+                            <td>03-4405-5679</td>
+                        </tr>
+                        <tr>
+                            <th>資本金</th>
+                            <td>5,000万円</td>
+                        </tr>
+                        <tr>
+                            <th>代表取締役</th>
+                            <td>山田 晃大</td>
+                        </tr>
+                        <tr>
+                            <th>住所</th>
+                            <td>〒110-0015東京都台東区東上野3-18-1 宝永ビル4F</td>
+                        </tr>
+                    </table>
+                </div>
+            </section>
+
+            <!-- モーダルエリアここから -->
+            <section id="modalArea" class="modalArea">
+                <div id="modalBg" class="modalBg"></div>
+                <div class="modalWrapper">
+                    <div class="modalContents">
+
+                    </div>
+                    <div id="closeModal" class="closeModal">
+                        <div id="cansel">閉じる <i class="fas fa-angle-right"></i></div>
+                        <script src="https://sdk.form.run/js/v2/embed.js"></script>
+                        <div id="contact" class="formrun-embed" data-formrun-form="@reglos-wevies-1594800369" data-formrun-redirect="true">
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- モーダルエリア終わり -->
+            <!-- 
+      <div id="section06" class="block block--gray" data-nav="data-nav">
+      </div> -->
+            </div>
+    </main>
+
+    <!-- ################################
+      #
+      #＿＿フッター
+      #
+      ##################################-->
+    <footer>
+        <div id="gototop">
+            <a href="#"><img src="images/icon/f_pgtop.png" alt="PAGE TOP"></a>
+        </div>
+        <div id="footer2">
+            <div class="u_inner">
+                <div class="f_logo">
+                    <img src="images/icon/logo.svg" alt="AAE" />
+                </div>
+                <div class="f_tel"><a class="u_tel splp9-call5" href="tel:03-4405-5679">03-4405-5679</a>
+                    <small class="g_ft">受付時間 9：00~18：00（ 土・日・祝日を除く ）</small></div>
+                <div class="f_mail">
+                    <a class="btn btn-flat hover-white before-white lp9-mail10" id="openModal2">
+                        <span>完全無料で診断</span>
+                        <i class="fas fa-angle-right fa-position-right"></i></a>
+                </div>
+                <p class="f_copy g_ft">© 2020 Wevies AAE</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        //フェードイン用のコードです
+        $(function() {
+            $(window).on('load scroll', function() {
+                $(".show").each(function() {
+                    var winScroll = $(window).scrollTop();
+                    var winHeight = $(window).height();
+                    var scrollPos = winScroll + (winHeight * 0.9);
+                    if ($(this).offset().top < scrollPos) {
+                        $(this).css({
+                            opacity: 1,
+                            transform: 'translate(0, 0)'
+                        });
+                    }
+                });
+            });
+        });
+        //フェードイン用のコードはここまでです
+
+        //ヘッダーの高さと背景色の変更
+        $(function() {
+            const header = $('#header');
+            $(window).on('load scroll', function() {
+                var headerHeight = header.innerHeight();
+
+                $(window).on('scroll', function() {
+                    if ($(this).scrollTop() > 100) {
+                        header.addClass('min-header');
+                    } else {
+                        header.removeClass('min-header');
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+
+</html>
