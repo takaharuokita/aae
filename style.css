@@ -2355,10 +2355,10 @@ Part.4
 
 @media screen and (max-width:480px) {
     .bg {
-        width: 80vw;
-        height: 46vh;
+        width: 89vw;
+        height: 50vh;
         background-image: url(images/back_image/bg02.svg);
-        background-size: cover;
+        background-size: contain;
         background-position: center;
         background-repeat: no-repeat;
         margin: auto;
